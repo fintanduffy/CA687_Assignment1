@@ -1,0 +1,4 @@
+hive -e 'select * from loaded_dental_plans' | sed 's/[\t]/,/g'  > loaded_dental_plans.csv
+
+-- move csv file to my user directoy on the Hadoop File System
+hadoop fs -put loaded_dental_plans.csv /user/fintand
